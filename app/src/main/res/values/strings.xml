@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CryptoPriceApplication</string>
+    <string name="update_prices">Update Prices</string>
+    <string name="crypto_list">List of cryptocurrency prices</string>
+</resources>
