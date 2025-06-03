@@ -1,20 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:fillViewport="true"
+    android:background="@color/white">
 
-    <Button
-        android:layout_gravity="center_horizontal"
-        android:id="@+id/btnUpdate"
-        android:layout_marginTop="350dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/update_prices" />
+    <FrameLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+        android:elevation="8dp">
+        <LinearLayout
+            android:id="@+id/rootLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/top_background_shape"
+            android:padding="16dp">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:contentDescription="@string/crypto_list"
-        android:id="@+id/cryptoRecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-</LinearLayout>
+            <!-- هدر -->
+            <TextView
+                android:id="@+id/appHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Crypto Price Application"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="24dp" />
+
+
+
+            <!-- RecyclerView با visibility = gone -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/cryptoRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginTop="8dp"
+                android:scrollbars="vertical"
+                android:clipToPadding="false"
+                android:paddingBottom="24dp" />
+
+        </LinearLayout>
+
+        <!-- دکمه بزرگ آپدیت -->
+        <Button
+            android:id="@+id/btnUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_margin="30dp"
+            android:background="@drawable/background_button"
+            android:padding="16dp"
+            android:text="Update Prices"
+            android:textColor="@color/white"
+            android:textSize="30dp" />
+    </FrameLayout>
+</ScrollView>

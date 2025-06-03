@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- رنگ‌های تم دارک -->
+    <color name="background_dark">#121212</color>
+    <color name="surface_dark">#1E1E1E</color>
+    <color name="on_surface_dark">#E0E0E0</color>
+    <color name="secondary_variant_dark">#018786</color>
+
+    <color name="primary_tealـdark">#03DAC5</color>
+</resources>

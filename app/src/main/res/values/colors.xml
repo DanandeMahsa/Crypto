@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- رنگ‌های پایه -->
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+
+    <!-- رنگ‌های تم لایت -->
+    <color name="background_light">#FAFAFA</color>
+    <color name="surface_light">#FFFFFF</color>
+    <color name="on_surface_light">#212121</color>
+    <color name="secondary_variant_light">#56E8D9</color>
+
+    <color name="primary_teal">#00ACC1</color>
+
 </resources>

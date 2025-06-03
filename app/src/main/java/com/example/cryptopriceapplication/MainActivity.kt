@@ -24,21 +24,17 @@ class MainActivity : AppCompatActivity() {
 
         recyclerView = findViewById(R.id.cryptoRecyclerView)
         btnUpdate = findViewById(R.id.btnUpdate)
-
         val cryptoAdapter = CryptoAdapter(emptyList())
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = cryptoAdapter
 //viewModel= CryptoViewModel()
         viewModel = ViewModelProvider(this).get(CryptoViewModel::class.java)
-
         viewModel.cryptoList.observe(this) { cryptos ->
             cryptoAdapter.updateData(cryptos)
         }
-
         btnUpdate.setOnClickListener {
             viewModel.updateFromApi()
         }
-
         viewModel.loadFromDatabase()
     }
 }
