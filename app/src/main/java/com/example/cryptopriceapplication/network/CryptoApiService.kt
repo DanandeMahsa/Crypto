@@ -16,12 +16,8 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface CryptoApiService {
-    @GET("coins/markets")
-    suspend fun getCryptoPrices(
-        @Query("vs_currency") vsCurrency: String = "usd",
-        @Query("order") order: String = "market_cap_desc",
-        @Query("per_page") perPage: Int = 50,
-        @Query("page") page: Int = 1,
-        @Query("sparkline") sparkline: Boolean = false
+    @GET("v1/coins")
+    suspend fun getMarkets(
+        @Query("vs_currency") currency: String = "usd" // دریافت قیمت بر اساس دلار
     ): Response<List<Crypto>>
 }
