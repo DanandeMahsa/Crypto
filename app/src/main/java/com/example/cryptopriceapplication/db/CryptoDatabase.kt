@@ -20,7 +20,8 @@ abstract class CryptoDatabase : RoomDatabase() {
                     context.applicationContext,
                     CryptoDatabase::class.java,
                     "crypto_database"
-                ).build()
+                )
+                    .allowMainThreadQueries().build()
                 INSTANCE = instance
                 instance
             }

@@ -43,7 +43,7 @@
 
         </LinearLayout>
 
-        <!-- دکمه بزرگ آپدیت -->
+<!--        &lt;!&ndash; دکمه بزرگ آپدیت &ndash;&gt;
         <Button
             android:id="@+id/btnUpdate"
             android:layout_width="wrap_content"
@@ -54,6 +54,6 @@
             android:padding="16dp"
             android:text="Update Prices"
             android:textColor="@color/white"
-            android:textSize="30dp" />
+            android:textSize="30dp" />-->
     </FrameLayout>
 </ScrollView>

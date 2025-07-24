@@ -24,23 +24,14 @@ class MainActivity : AppCompatActivity() {
 
 
         setupRecyclerView()
-        setupClickListeners()
         observeViewModel()
 
-
-        viewModel.fetchDataFromApi()
     }
 
     private fun setupRecyclerView() {
         binding.cryptoRecyclerView.apply {
             layoutManager = LinearLayoutManager(this@MainActivity)
             adapter = cryptoAdapter
-        }
-    }
-
-    private fun setupClickListeners() {
-        binding.btnUpdate.setOnClickListener {
-            viewModel.fetchDataFromApi()
         }
     }
 

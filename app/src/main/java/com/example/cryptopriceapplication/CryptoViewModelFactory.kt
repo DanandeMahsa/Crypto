@@ -8,7 +8,8 @@ class CryptoViewModelFactory(private val db: CryptoDatabase) : ViewModelProvider
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(CryptoViewModel::class.java)) {
             @Suppress("UNCHECKED_CAST")
-            return CryptoViewModel() as T
+//            return CryptoViewModel() as T
+        TODO()
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }
