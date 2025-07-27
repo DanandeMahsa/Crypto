@@ -2,4 +2,6 @@
     <string name="app_name">CryptoPriceApplication</string>
     <string name="update_prices">Update Prices</string>
     <string name="crypto_list">List of cryptocurrency prices</string>
+    <string name="coin_icon_description">Coin Icon</string>
+    <string name="trend_arrow_description">Price trend arrow</string>
 </resources>

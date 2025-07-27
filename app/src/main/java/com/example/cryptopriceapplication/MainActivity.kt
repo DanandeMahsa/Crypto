@@ -19,13 +19,10 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         viewModel = ViewModelProvider(this)[CryptoViewModel::class.java]
-
 
         setupRecyclerView()
         observeViewModel()
-
     }
 
     private fun setupRecyclerView() {
@@ -40,10 +37,7 @@ class MainActivity : AppCompatActivity() {
 
             cryptoAdapter.updateData(cryptos)
         }
-
-
         viewModel.isLoading.observe(this) { isLoading ->
-
         }
     }
 }
