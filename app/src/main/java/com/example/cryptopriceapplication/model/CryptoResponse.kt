@@ -9,7 +9,15 @@ data class CryptoData(
     val priceUsd: String
 )
 
-// تبدیل لیست CryptoData به CryptoEntity
 fun List<CryptoData>.toEntityList(): List<CryptoEntity> {
-    return map { CryptoEntity(it.symbol, it.priceUsd) }
+    return map {
+        CryptoEntity(
+            id = it.symbol,
+            name = it.symbol,
+            symbol = it.symbol,
+            image = "",
+            current_price = it.priceUsd.toDoubleOrNull() ?: 0.0,
+            price_change_percentage_24h = 0.0
+        )
+    }
 }

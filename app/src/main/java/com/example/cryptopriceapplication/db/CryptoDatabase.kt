@@ -6,8 +6,9 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.cryptopriceapplication.model.CryptoEntity
 
-@Database(entities = [CryptoEntity::class], version = 1)
+@Database(entities = [CryptoEntity::class], version = 1, exportSchema = false)
 abstract class CryptoDatabase : RoomDatabase() {
+
     abstract fun cryptoDao(): CryptoDao
 
     companion object {
@@ -21,7 +22,8 @@ abstract class CryptoDatabase : RoomDatabase() {
                     CryptoDatabase::class.java,
                     "crypto_database"
                 )
-                    .allowMainThreadQueries().build()
+                    .fallbackToDestructiveMigration()
+                    .build()
                 INSTANCE = instance
                 instance
             }

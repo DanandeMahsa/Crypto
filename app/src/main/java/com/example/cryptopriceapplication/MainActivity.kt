@@ -1,43 +1,48 @@
 package com.example.cryptopriceapplication
 
-import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.view.View
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.cryptopriceapplication.adapter.CryptoAdapter
-import com.example.cryptopriceapplication.databinding.ActivityMainBinding // این خط را اضافه کنید
+import com.example.cryptopriceapplication.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var viewModel: CryptoViewModel
-    private val cryptoAdapter = CryptoAdapter(emptyList())
+    private val cryptoAdapter = CryptoAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        viewModel = ViewModelProvider(this)[CryptoViewModel::class.java]
+        viewModel = ViewModelProvider(this).get(CryptoViewModel::class.java)
 
-        setupRecyclerView()
+        setupUI()
         observeViewModel()
     }
 
-    private fun setupRecyclerView() {
-        binding.cryptoRecyclerView.apply {
-            layoutManager = LinearLayoutManager(this@MainActivity)
-            adapter = cryptoAdapter
-        }
+    private fun setupUI() {
+        binding.cryptoRecyclerView.adapter = cryptoAdapter
     }
 
     private fun observeViewModel() {
-        viewModel.cryptoList.observe(this) { cryptos ->
-
-            cryptoAdapter.updateData(cryptos)
-        }
         viewModel.isLoading.observe(this) { isLoading ->
+            if (isLoading) {
+                // Add .root to access the actual view from the included layout
+                binding.loadingView.root.visibility = View.VISIBLE
+                binding.contentGroup.visibility = View.GONE
+            } else {
+                // Add .root here as well
+                binding.loadingView.root.visibility = View.GONE
+                binding.contentGroup.visibility = View.VISIBLE
+            }
+        }
+
+        viewModel.cryptoListLive.observe(this) { cryptoList ->
+            cryptoAdapter.submitList(cryptoList)
         }
     }
 }

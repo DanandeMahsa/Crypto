@@ -1,7 +1,10 @@
 <resources>
     <string name="app_name">CryptoPriceApplication</string>
-    <string name="update_prices">Update Prices</string>
-    <string name="crypto_list">List of cryptocurrency prices</string>
-    <string name="coin_icon_description">Coin Icon</string>
-    <string name="trend_arrow_description">Price trend arrow</string>
+    <string name="main_title">Coin List</string>
+    <string name="search_icon_desc">Search for a coin</string>
+    <string name="error_message">Failed to load data!</string>
+    <string name="retry">Retry</string>
+    <string name="coin_icon">Coin icon</string>
+    <string name="loading_indicator">loading\n</string>
+
 </resources>
