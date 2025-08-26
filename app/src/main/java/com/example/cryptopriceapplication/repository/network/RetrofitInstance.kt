@@ -1,4 +1,4 @@
-package com.example.cryptopriceapplication.network
+package com.example.cryptopriceapplication.repository.network
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory // یا هر Converter دیگری که استفاده می‌کنی

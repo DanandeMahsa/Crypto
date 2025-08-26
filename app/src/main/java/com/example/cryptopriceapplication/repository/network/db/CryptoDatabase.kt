@@ -1,12 +1,11 @@
-package com.example.cryptopriceapplication.db
+package com.example.cryptopriceapplication.repository.network.db
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.cryptopriceapplication.model.CryptoEntity
 
-@Database(entities = [CryptoEntity::class], version = 1, exportSchema = false)
+@Database(entities = [CryptoEntity::class], version = 2, exportSchema = false)
 abstract class CryptoDatabase : RoomDatabase() {
 
     abstract fun cryptoDao(): CryptoDao

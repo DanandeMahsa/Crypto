@@ -1,4 +1,4 @@
-package com.example.cryptopriceapplication.model
+package com.example.cryptopriceapplication.repository.network.db
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

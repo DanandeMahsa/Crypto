@@ -1,5 +1,7 @@
 package com.example.cryptopriceapplication.model
 
+import com.example.cryptopriceapplication.repository.network.db.CryptoEntity
+
 data class CryptoResponse(
     val data: List<CryptoData>
 )

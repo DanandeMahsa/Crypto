@@ -1,13 +1,11 @@
 package com.example.cryptopriceapplication.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import coil.load
 import com.example.cryptopriceapplication.databinding.ItemCoinBinding
-import com.example.cryptopriceapplication.model.CryptoEntity
+import com.example.cryptopriceapplication.repository.network.db.CryptoEntity
 import java.util.Locale
 
 class CryptoAdapter : ListAdapter<CryptoEntity, CryptoAdapter.CryptoViewHolder>(CryptoDiffCallback()) {

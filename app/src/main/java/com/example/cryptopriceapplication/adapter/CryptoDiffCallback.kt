@@ -1,7 +1,7 @@
 package com.example.cryptopriceapplication.adapter
 
 import androidx.recyclerview.widget.DiffUtil
-import com.example.cryptopriceapplication.model.CryptoEntity
+import com.example.cryptopriceapplication.repository.network.db.CryptoEntity
 
 class CryptoDiffCallback : DiffUtil.ItemCallback<CryptoEntity>() {
     override fun areItemsTheSame(oldItem: CryptoEntity, newItem: CryptoEntity): Boolean {

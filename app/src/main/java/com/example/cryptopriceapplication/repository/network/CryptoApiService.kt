@@ -1,4 +1,4 @@
-package com.example.cryptopriceapplication.network
+package com.example.cryptopriceapplication.repository.network
 
 import com.example.cryptopriceapplication.model.Crypto
 import retrofit2.Response
